@@ -1,0 +1,15 @@
+device tempSensor = connect("modbus://sensor_temp")
+device fan = connect("gpio://fan_pin5")
+
+while true
+    var temp = tempSensor.read("temperature")
+
+    if temp > 25
+        fan.on()
+        log("Ventilador ligado. Temperatura: " + temp)
+    else
+        fan.off()
+        log("Ventilador desligado. Temperatura: " + temp)
+    end
+end
+

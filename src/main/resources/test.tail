@@ -1,0 +1,7 @@
+begin
+    log("Hello World")
+
+    if 3 < 2
+        log("Ola Mundo")
+    end
+end
